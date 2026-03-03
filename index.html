@@ -64,15 +64,23 @@ function updateNominal() {
   nominal.innerHTML = '<option value="">Pilih Nominal</option>';
 
   if (game == "ml") {
-    nominal.innerHTML += '<option>86 Diamond - Rp 20.000</option>';
-    nominal.innerHTML += '<option>172 Diamond - Rp 38.000</option>';
-    nominal.innerHTML += '<option>257 Diamond - Rp 55.000</option>';
+    nominal.innerHTML += '<option>170 Diamond - Rp 66.000</option>';
+    nominal.innerHTML += '<option>169 Diamond - Rp 38.000</option>';
+    nominal.innerHTML += '<option>240 Diamond - Rp 69.000</option>';
+    nominal.innerHTML += '<option>229 Diamond - Rp 81.000</option>';
+    nominal.innerHTML += '<option>408 Diamond - Rp 116.000</option>';
+    nominal.innerHTML += '<option>568 Diamond - Rp 159.000</option>';
+    nominal.innerHTML += '<option>466 Diamond - Rp 162.000</option>';
+    nominal.innerHTML += '<option>592 Diamond - Rp 202.000</option>';
+    nominal.innerHTML += '<option>875 Diamond - Rp 243.000</option>';
   }
 
   if (game == "ff") {
-    nominal.innerHTML += '<option>70 Diamond - Rp 12.000</option>';
-    nominal.innerHTML += '<option>140 Diamond - Rp 24.000</option>';
-    nominal.innerHTML += '<option>355 Diamond - Rp 58.000</option>';
+    nominal.innerHTML += '<option>12 Diamond - Rp 2.000</option>';
+    nominal.innerHTML += '<option>50 Diamond - Rp 8.000</option>';
+    nominal.innerHTML += '<option>70 Diamond - Rp 10.000</option>';
+    nominal.innerHTML += '<option>140 Diamond - Rp 20.000</option>';
+    nominal.innerHTML += '<option>355 Diamond - Rp 50.000</option>';
   }
 
   if (game == "pubg") {
@@ -92,7 +100,7 @@ function kirimWA() {
     return;
   }
 
-  var nomor = "6281234567890"; // GANTI NOMOR KAMU
+  var nomor = "6285960446999"; // GANTI NOMOR KAMU
   var pesan = "Halo, saya ingin top up.%0A" +
               "Game: " + game + "%0A" +
               "User ID: " + userid + "%0A" +
