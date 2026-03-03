@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Top Up Game Murah</title>
+  <title>RULZ4YOU STORE</title>
   <style>
     body {
       font-family: Arial;
-      background: linear-gradient(to right, purple, blue);
+      background: linear-gradient(to right, black, purple);
       text-align: center;
       color: white;
-      padding: 50px;
+      padding: 40px;
     }
     .box {
       background: white;
       color: black;
       padding: 20px;
       border-radius: 15px;
-      width: 300px;
+      width: 320px;
       margin: auto;
     }
     input, select {
@@ -36,29 +36,52 @@
 </head>
 <body>
 
-<h1>Website Top Up Game</h1>
+<h1>RULZ4YOU STORE</h1>
+<p>Top Up Game Murah, Cepat & Aman</p>
 
 <div class="box">
-  <select id="game">
+  <select id="game" onchange="updateNominal()">
     <option value="">Pilih Game</option>
-    <option>Mobile Legends</option>
-    <option>Free Fire</option>
-    <option>PUBG Mobile</option>
+    <option value="ml">Mobile Legends</option>
+    <option value="ff">Free Fire</option>
+    <option value="pubg">PUBG Mobile</option>
   </select>
 
   <input type="text" id="userid" placeholder="Masukkan User ID">
 
   <select id="nominal">
     <option value="">Pilih Nominal</option>
-    <option>Rp 10.000</option>
-    <option>Rp 25.000</option>
-    <option>Rp 50.000</option>
   </select>
 
   <button onclick="kirimWA()">Pesan Sekarang</button>
 </div>
 
 <script>
+function updateNominal() {
+  var game = document.getElementById("game").value;
+  var nominal = document.getElementById("nominal");
+
+  nominal.innerHTML = '<option value="">Pilih Nominal</option>';
+
+  if (game == "ml") {
+    nominal.innerHTML += '<option>86 Diamond - Rp 20.000</option>';
+    nominal.innerHTML += '<option>172 Diamond - Rp 38.000</option>';
+    nominal.innerHTML += '<option>257 Diamond - Rp 55.000</option>';
+  }
+
+  if (game == "ff") {
+    nominal.innerHTML += '<option>70 Diamond - Rp 12.000</option>';
+    nominal.innerHTML += '<option>140 Diamond - Rp 24.000</option>';
+    nominal.innerHTML += '<option>355 Diamond - Rp 58.000</option>';
+  }
+
+  if (game == "pubg") {
+    nominal.innerHTML += '<option>60 UC - Rp 16.000</option>';
+    nominal.innerHTML += '<option>325 UC - Rp 75.000</option>';
+    nominal.innerHTML += '<option>660 UC - Rp 150.000</option>';
+  }
+}
+
 function kirimWA() {
   var game = document.getElementById("game").value;
   var userid = document.getElementById("userid").value;
@@ -69,10 +92,11 @@ function kirimWA() {
     return;
   }
 
-  var nomor = "6282192969493"; // GANTI dengan nomor kamu
-  var pesan = "Halo, saya ingin top up " + game +
-              "%0AUser ID: " + userid +
-              "%0ANominal: " + nominal;
+  var nomor = "6281234567890"; // GANTI NOMOR KAMU
+  var pesan = "Halo, saya ingin top up.%0A" +
+              "Game: " + game + "%0A" +
+              "User ID: " + userid + "%0A" +
+              "Nominal: " + nominal;
 
   window.open("https://wa.me/" + nomor + "?text=" + pesan);
 }
