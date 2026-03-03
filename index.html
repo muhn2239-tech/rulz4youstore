@@ -144,4 +144,35 @@ function updateNominal() {
     nominal.innerHTML += '<option>50 Diamond - Rp 8.000</option>';
     nominal.innerHTML += '<option>70 Diamond - Rp 10.000</option>';
     nominal.innerHTML += '<option>140 Diamond - Rp 20.000</option>';
-    nominal.inner
+    nominal.innerHTML += '<option>355 Diamond - Rp 50.000</option>';
+  }
+
+  if (game == "pubg") {
+    nominal.innerHTML += '<option>60 UC - Rp 16.000</option>';
+    nominal.innerHTML += '<option>325 UC - Rp 75.000</option>';
+    nominal.innerHTML += '<option>660 UC - Rp 150.000</option>';
+  }
+}
+
+function kirimWA() {
+  var game = document.getElementById("game").value;
+  var userid = document.getElementById("userid").value;
+  var nominal = document.getElementById("nominal").value;
+
+  if(game == "" || userid == "" || nominal == "") {
+    alert("Harap isi semua data!");
+    return;
+  }
+
+  var nomor = "6285960446999"; // GANTI NOMOR KAMU
+  var pesan = "Halo, saya ingin top up.%0A" +
+              "Game: " + game + "%0A" +
+              "User ID: " + userid + "%0A" +
+              "Nominal: " + nominal;
+
+  window.open("https://wa.me/" + nomor + "?text=" + pesan);
+}
+</script>
+
+</body>
+</html>
