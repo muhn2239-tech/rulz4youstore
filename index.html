@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Up Game Murah</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, purple, blue);
+      text-align: center;
+      color: white;
+      padding: 50px;
+    }
+    .box {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+      margin: auto;
+    }
+    input, select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Website Top Up Game</h1>
+
+<div class="box">
+  <select id="game">
+    <option value="">Pilih Game</option>
+    <option>Mobile Legends</option>
+    <option>Free Fire</option>
+    <option>PUBG Mobile</option>
+  </select>
+
+  <input type="text" id="userid" placeholder="Masukkan User ID">
+
+  <select id="nominal">
+    <option value="">Pilih Nominal</option>
+    <option>Rp 10.000</option>
+    <option>Rp 25.000</option>
+    <option>Rp 50.000</option>
+  </select>
+
+  <button onclick="kirimWA()">Pesan Sekarang</button>
+</div>
+
+<script>
+function kirimWA() {
+  var game = document.getElementById("game").value;
+  var userid = document.getElementById("userid").value;
+  var nominal = document.getElementById("nominal").value;
+
+  if(game == "" || userid == "" || nominal == "") {
+    alert("Harap isi semua data!");
+    return;
+  }
+
+  var nomor = "6282192969493"; // GANTI dengan nomor kamu
+  var pesan = "Halo, saya ingin top up " + game +
+              "%0AUser ID: " + userid +
+              "%0ANominal: " + nominal;
+
+  window.open("https://wa.me/" + nomor + "?text=" + pesan);
+}
+</script>
+
+</body>
+</html>
